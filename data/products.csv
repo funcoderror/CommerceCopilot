@@ -1,0 +1,201 @@
+product_id,name,category,brand,description,price,discount_percent,stock,rating
+P001,Sony Wireless Headphones 1,Electronics,Sony,Sony Wireless Headphones designed for everyday use. Suitable for customers looking for quality and reliable performance.,1611.55,10,31,3.4
+P002,Sony Wireless Headphones 2,Electronics,Sony,Sony Wireless Headphones designed for everyday use. Suitable for customers looking for quality and reliable performance.,4544.15,20,11,4.2
+P003,Sony Wireless Headphones 3,Electronics,Sony,Sony Wireless Headphones designed for everyday use. Suitable for customers looking for quality and reliable performance.,1633.09,5,29,4.0
+P004,Sony Wireless Headphones 4,Electronics,Sony,Sony Wireless Headphones designed for everyday use. Suitable for customers looking for quality and reliable performance.,4024.6,25,83,4.4
+P005,Boat Wireless Headphones 5,Electronics,Boat,Boat Wireless Headphones designed for everyday use. Suitable for customers looking for quality and reliable performance.,2490.98,20,35,4.6
+P006,Sony Bluetooth Speaker 1,Electronics,Sony,Sony Bluetooth Speaker designed for everyday use. Suitable for customers looking for quality and reliable performance.,3251.3,5,89,3.8
+P007,Logitech Bluetooth Speaker 2,Electronics,Logitech,Logitech Bluetooth Speaker designed for everyday use. Suitable for customers looking for quality and reliable performance.,1380.99,10,13,3.2
+P008,Sony Bluetooth Speaker 3,Electronics,Sony,Sony Bluetooth Speaker designed for everyday use. Suitable for customers looking for quality and reliable performance.,2011.84,10,77,3.5
+P009,Sony Bluetooth Speaker 4,Electronics,Sony,Sony Bluetooth Speaker designed for everyday use. Suitable for customers looking for quality and reliable performance.,3161.17,20,15,4.9
+P010,Boat Bluetooth Speaker 5,Electronics,Boat,Boat Bluetooth Speaker designed for everyday use. Suitable for customers looking for quality and reliable performance.,1143.28,10,80,4.2
+P011,Logitech Mechanical Keyboard 1,Electronics,Logitech,Logitech Mechanical Keyboard designed for everyday use. Suitable for customers looking for quality and reliable performance.,3435.2,25,8,3.1
+P012,JBL Mechanical Keyboard 2,Electronics,JBL,JBL Mechanical Keyboard designed for everyday use. Suitable for customers looking for quality and reliable performance.,4159.35,0,29,4.7
+P013,Boat Mechanical Keyboard 3,Electronics,Boat,Boat Mechanical Keyboard designed for everyday use. Suitable for customers looking for quality and reliable performance.,2327.5,25,46,3.3
+P014,Logitech Mechanical Keyboard 4,Electronics,Logitech,Logitech Mechanical Keyboard designed for everyday use. Suitable for customers looking for quality and reliable performance.,2074.18,10,89,4.9
+P015,Sony Mechanical Keyboard 5,Electronics,Sony,Sony Mechanical Keyboard designed for everyday use. Suitable for customers looking for quality and reliable performance.,3552.78,5,68,4.5
+P016,JBL Wireless Mouse 1,Electronics,JBL,JBL Wireless Mouse designed for everyday use. Suitable for customers looking for quality and reliable performance.,1138.62,10,81,4.4
+P017,JBL Wireless Mouse 2,Electronics,JBL,JBL Wireless Mouse designed for everyday use. Suitable for customers looking for quality and reliable performance.,1494.38,0,29,4.6
+P018,Logitech Wireless Mouse 3,Electronics,Logitech,Logitech Wireless Mouse designed for everyday use. Suitable for customers looking for quality and reliable performance.,1040.86,0,27,4.8
+P019,Portronics Wireless Mouse 4,Electronics,Portronics,Portronics Wireless Mouse designed for everyday use. Suitable for customers looking for quality and reliable performance.,1801.19,10,27,4.3
+P020,Boat Wireless Mouse 5,Electronics,Boat,Boat Wireless Mouse designed for everyday use. Suitable for customers looking for quality and reliable performance.,1814.49,25,58,3.3
+P021,OnePlus Smartphone 1,Mobiles,OnePlus,OnePlus Smartphone designed for everyday use. Suitable for customers looking for quality and reliable performance.,14657.94,20,68,3.5
+P022,Anker Smartphone 2,Mobiles,Anker,Anker Smartphone designed for everyday use. Suitable for customers looking for quality and reliable performance.,19566.71,20,51,3.7
+P023,OnePlus Smartphone 3,Mobiles,OnePlus,OnePlus Smartphone designed for everyday use. Suitable for customers looking for quality and reliable performance.,21756.21,0,96,3.1
+P024,Samsung Smartphone 4,Mobiles,Samsung,Samsung Smartphone designed for everyday use. Suitable for customers looking for quality and reliable performance.,12125.72,5,87,3.8
+P025,Samsung Smartphone 5,Mobiles,Samsung,Samsung Smartphone designed for everyday use. Suitable for customers looking for quality and reliable performance.,18387.72,20,59,4.1
+P026,Anker Phone Case 1,Mobiles,Anker,Anker Phone Case designed for everyday use. Suitable for customers looking for quality and reliable performance.,887.62,0,87,4.4
+P027,Anker Phone Case 2,Mobiles,Anker,Anker Phone Case designed for everyday use. Suitable for customers looking for quality and reliable performance.,799.7,25,43,3.2
+P028,Spigen Phone Case 3,Mobiles,Spigen,Spigen Phone Case designed for everyday use. Suitable for customers looking for quality and reliable performance.,325.53,0,92,4.8
+P029,Realme Phone Case 4,Mobiles,Realme,Realme Phone Case designed for everyday use. Suitable for customers looking for quality and reliable performance.,976.51,5,64,4.8
+P030,Realme Phone Case 5,Mobiles,Realme,Realme Phone Case designed for everyday use. Suitable for customers looking for quality and reliable performance.,872.34,20,77,3.4
+P031,Realme Fast Charger 1,Mobiles,Realme,Realme Fast Charger designed for everyday use. Suitable for customers looking for quality and reliable performance.,1466.52,20,99,4.8
+P032,Samsung Fast Charger 2,Mobiles,Samsung,Samsung Fast Charger designed for everyday use. Suitable for customers looking for quality and reliable performance.,1237.52,15,2,3.2
+P033,Realme Fast Charger 3,Mobiles,Realme,Realme Fast Charger designed for everyday use. Suitable for customers looking for quality and reliable performance.,1629.21,10,30,3.1
+P034,Anker Fast Charger 4,Mobiles,Anker,Anker Fast Charger designed for everyday use. Suitable for customers looking for quality and reliable performance.,1724.73,0,93,4.0
+P035,Samsung Fast Charger 5,Mobiles,Samsung,Samsung Fast Charger designed for everyday use. Suitable for customers looking for quality and reliable performance.,1768.18,20,98,3.3
+P036,Spigen Power Bank 1,Mobiles,Spigen,Spigen Power Bank designed for everyday use. Suitable for customers looking for quality and reliable performance.,2882.07,5,33,4.1
+P037,Anker Power Bank 2,Mobiles,Anker,Anker Power Bank designed for everyday use. Suitable for customers looking for quality and reliable performance.,1729.9,5,69,4.5
+P038,OnePlus Power Bank 3,Mobiles,OnePlus,OnePlus Power Bank designed for everyday use. Suitable for customers looking for quality and reliable performance.,2367.49,15,85,4.3
+P039,Spigen Power Bank 4,Mobiles,Spigen,Spigen Power Bank designed for everyday use. Suitable for customers looking for quality and reliable performance.,2778.15,15,15,3.5
+P040,Samsung Power Bank 5,Mobiles,Samsung,Samsung Power Bank designed for everyday use. Suitable for customers looking for quality and reliable performance.,1542.79,20,70,3.5
+P041,Puma Cotton T-Shirt 1,Fashion,Puma,Puma Cotton T-Shirt designed for everyday use. Suitable for customers looking for quality and reliable performance.,406.91,25,80,3.1
+P042,Roadster Cotton T-Shirt 2,Fashion,Roadster,Roadster Cotton T-Shirt designed for everyday use. Suitable for customers looking for quality and reliable performance.,1394.96,10,9,4.0
+P043,Adidas Cotton T-Shirt 3,Fashion,Adidas,Adidas Cotton T-Shirt designed for everyday use. Suitable for customers looking for quality and reliable performance.,1134.88,5,69,3.3
+P044,HRX Cotton T-Shirt 4,Fashion,HRX,HRX Cotton T-Shirt designed for everyday use. Suitable for customers looking for quality and reliable performance.,1032.83,5,100,3.9
+P045,Levis Cotton T-Shirt 5,Fashion,Levis,Levis Cotton T-Shirt designed for everyday use. Suitable for customers looking for quality and reliable performance.,608.45,0,84,3.9
+P046,Levis Denim Jeans 1,Fashion,Levis,Levis Denim Jeans designed for everyday use. Suitable for customers looking for quality and reliable performance.,1821.2,25,6,4.3
+P047,Roadster Denim Jeans 2,Fashion,Roadster,Roadster Denim Jeans designed for everyday use. Suitable for customers looking for quality and reliable performance.,1120.23,25,43,4.6
+P048,Roadster Denim Jeans 3,Fashion,Roadster,Roadster Denim Jeans designed for everyday use. Suitable for customers looking for quality and reliable performance.,1496.31,5,68,3.9
+P049,Levis Denim Jeans 4,Fashion,Levis,Levis Denim Jeans designed for everyday use. Suitable for customers looking for quality and reliable performance.,1365.98,15,31,4.7
+P050,Roadster Denim Jeans 5,Fashion,Roadster,Roadster Denim Jeans designed for everyday use. Suitable for customers looking for quality and reliable performance.,1885.26,20,12,3.1
+P051,HRX Running Shoes 1,Fashion,HRX,HRX Running Shoes designed for everyday use. Suitable for customers looking for quality and reliable performance.,5261.12,0,96,4.7
+P052,Puma Running Shoes 2,Fashion,Puma,Puma Running Shoes designed for everyday use. Suitable for customers looking for quality and reliable performance.,3327.86,15,27,4.7
+P053,Roadster Running Shoes 3,Fashion,Roadster,Roadster Running Shoes designed for everyday use. Suitable for customers looking for quality and reliable performance.,2239.87,0,49,3.5
+P054,Levis Running Shoes 4,Fashion,Levis,Levis Running Shoes designed for everyday use. Suitable for customers looking for quality and reliable performance.,2782.62,25,93,5.0
+P055,HRX Running Shoes 5,Fashion,HRX,HRX Running Shoes designed for everyday use. Suitable for customers looking for quality and reliable performance.,4477.42,15,19,3.4
+P056,Puma Casual Jacket 1,Fashion,Puma,Puma Casual Jacket designed for everyday use. Suitable for customers looking for quality and reliable performance.,4883.22,20,94,4.1
+P057,Adidas Casual Jacket 2,Fashion,Adidas,Adidas Casual Jacket designed for everyday use. Suitable for customers looking for quality and reliable performance.,1510.51,20,61,4.0
+P058,HRX Casual Jacket 3,Fashion,HRX,HRX Casual Jacket designed for everyday use. Suitable for customers looking for quality and reliable performance.,1881.5,20,10,4.7
+P059,Roadster Casual Jacket 4,Fashion,Roadster,Roadster Casual Jacket designed for everyday use. Suitable for customers looking for quality and reliable performance.,3500.63,25,30,3.8
+P060,HRX Casual Jacket 5,Fashion,HRX,HRX Casual Jacket designed for everyday use. Suitable for customers looking for quality and reliable performance.,2210.0,20,5,4.2
+P061,Ikea Desk Lamp 1,Home & Kitchen,Ikea,Ikea Desk Lamp designed for everyday use. Suitable for customers looking for quality and reliable performance.,1485.06,20,66,3.6
+P062,HomeCentre Desk Lamp 2,Home & Kitchen,HomeCentre,HomeCentre Desk Lamp designed for everyday use. Suitable for customers looking for quality and reliable performance.,805.39,25,40,3.5
+P063,Ikea Desk Lamp 3,Home & Kitchen,Ikea,Ikea Desk Lamp designed for everyday use. Suitable for customers looking for quality and reliable performance.,695.32,25,38,3.9
+P064,Prestige Desk Lamp 4,Home & Kitchen,Prestige,Prestige Desk Lamp designed for everyday use. Suitable for customers looking for quality and reliable performance.,512.97,20,72,5.0
+P065,Prestige Desk Lamp 5,Home & Kitchen,Prestige,Prestige Desk Lamp designed for everyday use. Suitable for customers looking for quality and reliable performance.,1305.45,20,33,3.3
+P066,HomeCentre Office Chair 1,Home & Kitchen,HomeCentre,HomeCentre Office Chair designed for everyday use. Suitable for customers looking for quality and reliable performance.,8224.62,5,47,3.6
+P067,Ikea Office Chair 2,Home & Kitchen,Ikea,Ikea Office Chair designed for everyday use. Suitable for customers looking for quality and reliable performance.,7918.34,25,38,4.2
+P068,Havells Office Chair 3,Home & Kitchen,Havells,Havells Office Chair designed for everyday use. Suitable for customers looking for quality and reliable performance.,2549.85,20,38,4.9
+P069,Prestige Office Chair 4,Home & Kitchen,Prestige,Prestige Office Chair designed for everyday use. Suitable for customers looking for quality and reliable performance.,8602.05,5,33,3.2
+P070,Prestige Office Chair 5,Home & Kitchen,Prestige,Prestige Office Chair designed for everyday use. Suitable for customers looking for quality and reliable performance.,7324.71,5,34,3.6
+P071,Philips Storage Organizer 1,Home & Kitchen,Philips,Philips Storage Organizer designed for everyday use. Suitable for customers looking for quality and reliable performance.,1160.13,5,87,4.3
+P072,HomeCentre Storage Organizer 2,Home & Kitchen,HomeCentre,HomeCentre Storage Organizer designed for everyday use. Suitable for customers looking for quality and reliable performance.,905.49,10,6,3.2
+P073,Ikea Storage Organizer 3,Home & Kitchen,Ikea,Ikea Storage Organizer designed for everyday use. Suitable for customers looking for quality and reliable performance.,1294.22,0,0,3.7
+P074,Philips Storage Organizer 4,Home & Kitchen,Philips,Philips Storage Organizer designed for everyday use. Suitable for customers looking for quality and reliable performance.,1063.54,10,20,4.5
+P075,Havells Storage Organizer 5,Home & Kitchen,Havells,Havells Storage Organizer designed for everyday use. Suitable for customers looking for quality and reliable performance.,1145.8,20,1,3.2
+P076,Philips Electric Kettle 1,Home & Kitchen,Philips,Philips Electric Kettle designed for everyday use. Suitable for customers looking for quality and reliable performance.,1681.06,10,74,4.1
+P077,Ikea Electric Kettle 2,Home & Kitchen,Ikea,Ikea Electric Kettle designed for everyday use. Suitable for customers looking for quality and reliable performance.,928.4,10,46,4.8
+P078,Prestige Electric Kettle 3,Home & Kitchen,Prestige,Prestige Electric Kettle designed for everyday use. Suitable for customers looking for quality and reliable performance.,2317.06,5,87,3.5
+P079,Prestige Electric Kettle 4,Home & Kitchen,Prestige,Prestige Electric Kettle designed for everyday use. Suitable for customers looking for quality and reliable performance.,1335.62,20,52,4.9
+P080,Philips Electric Kettle 5,Home & Kitchen,Philips,Philips Electric Kettle designed for everyday use. Suitable for customers looking for quality and reliable performance.,2365.37,5,20,5.0
+P081,Wildcraft Smart Watch 1,Accessories,Wildcraft,Wildcraft Smart Watch designed for everyday use. Suitable for customers looking for quality and reliable performance.,5441.66,0,22,4.5
+P082,Titan Smart Watch 2,Accessories,Titan,Titan Smart Watch designed for everyday use. Suitable for customers looking for quality and reliable performance.,4976.22,15,85,4.7
+P083,Wildcraft Smart Watch 3,Accessories,Wildcraft,Wildcraft Smart Watch designed for everyday use. Suitable for customers looking for quality and reliable performance.,2552.99,25,13,3.8
+P084,Fastrack Smart Watch 4,Accessories,Fastrack,Fastrack Smart Watch designed for everyday use. Suitable for customers looking for quality and reliable performance.,5334.39,5,25,4.6
+P085,Skybags Smart Watch 5,Accessories,Skybags,Skybags Smart Watch designed for everyday use. Suitable for customers looking for quality and reliable performance.,2942.39,5,28,3.0
+P086,Wildcraft Laptop Backpack 1,Accessories,Wildcraft,Wildcraft Laptop Backpack designed for everyday use. Suitable for customers looking for quality and reliable performance.,1675.63,10,8,4.9
+P087,Titan Laptop Backpack 2,Accessories,Titan,Titan Laptop Backpack designed for everyday use. Suitable for customers looking for quality and reliable performance.,1571.52,20,51,4.4
+P088,Noise Laptop Backpack 3,Accessories,Noise,Noise Laptop Backpack designed for everyday use. Suitable for customers looking for quality and reliable performance.,1527.53,0,14,4.8
+P089,Titan Laptop Backpack 4,Accessories,Titan,Titan Laptop Backpack designed for everyday use. Suitable for customers looking for quality and reliable performance.,1191.85,10,4,3.2
+P090,Skybags Laptop Backpack 5,Accessories,Skybags,Skybags Laptop Backpack designed for everyday use. Suitable for customers looking for quality and reliable performance.,1559.51,10,55,4.2
+P091,Noise Leather Wallet 1,Accessories,Noise,Noise Leather Wallet designed for everyday use. Suitable for customers looking for quality and reliable performance.,526.21,20,24,3.5
+P092,Skybags Leather Wallet 2,Accessories,Skybags,Skybags Leather Wallet designed for everyday use. Suitable for customers looking for quality and reliable performance.,400.86,20,87,4.4
+P093,Wildcraft Leather Wallet 3,Accessories,Wildcraft,Wildcraft Leather Wallet designed for everyday use. Suitable for customers looking for quality and reliable performance.,799.64,0,85,4.8
+P094,Noise Leather Wallet 4,Accessories,Noise,Noise Leather Wallet designed for everyday use. Suitable for customers looking for quality and reliable performance.,744.31,0,92,4.8
+P095,Noise Leather Wallet 5,Accessories,Noise,Noise Leather Wallet designed for everyday use. Suitable for customers looking for quality and reliable performance.,739.21,15,41,3.8
+P096,Titan Sunglasses 1,Accessories,Titan,Titan Sunglasses designed for everyday use. Suitable for customers looking for quality and reliable performance.,1241.5,5,53,4.3
+P097,Skybags Sunglasses 2,Accessories,Skybags,Skybags Sunglasses designed for everyday use. Suitable for customers looking for quality and reliable performance.,1450.44,5,78,4.1
+P098,Skybags Sunglasses 3,Accessories,Skybags,Skybags Sunglasses designed for everyday use. Suitable for customers looking for quality and reliable performance.,1230.49,0,38,3.6
+P099,Skybags Sunglasses 4,Accessories,Skybags,Skybags Sunglasses designed for everyday use. Suitable for customers looking for quality and reliable performance.,1634.79,20,83,3.6
+P100,Skybags Sunglasses 5,Accessories,Skybags,Skybags Sunglasses designed for everyday use. Suitable for customers looking for quality and reliable performance.,1050.67,5,65,3.9
+P101,HP Laptop 1,Computers,HP,HP Laptop designed for everyday use. Suitable for customers looking for quality and reliable performance.,69530.04,10,65,4.3
+P102,Kingston Laptop 2,Computers,Kingston,Kingston Laptop designed for everyday use. Suitable for customers looking for quality and reliable performance.,50110.3,5,86,3.6
+P103,HP Laptop 3,Computers,HP,HP Laptop designed for everyday use. Suitable for customers looking for quality and reliable performance.,38840.24,0,31,5.0
+P104,Kingston Laptop 4,Computers,Kingston,Kingston Laptop designed for everyday use. Suitable for customers looking for quality and reliable performance.,80983.26,0,58,3.8
+P105,Kingston Laptop 5,Computers,Kingston,Kingston Laptop designed for everyday use. Suitable for customers looking for quality and reliable performance.,41665.11,25,49,4.0
+P106,HP SSD 1,Computers,HP,HP SSD designed for everyday use. Suitable for customers looking for quality and reliable performance.,2605.79,25,0,4.8
+P107,Dell SSD 2,Computers,Dell,Dell SSD designed for everyday use. Suitable for customers looking for quality and reliable performance.,7337.15,5,22,4.6
+P108,Kingston SSD 3,Computers,Kingston,Kingston SSD designed for everyday use. Suitable for customers looking for quality and reliable performance.,4983.12,20,31,4.8
+P109,Dell SSD 4,Computers,Dell,Dell SSD designed for everyday use. Suitable for customers looking for quality and reliable performance.,4922.46,15,85,4.1
+P110,Kingston SSD 5,Computers,Kingston,Kingston SSD designed for everyday use. Suitable for customers looking for quality and reliable performance.,5964.89,15,78,4.6
+P111,Kingston RAM Module 1,Computers,Kingston,Kingston RAM Module designed for everyday use. Suitable for customers looking for quality and reliable performance.,3559.44,20,57,4.8
+P112,Crucial RAM Module 2,Computers,Crucial,Crucial RAM Module designed for everyday use. Suitable for customers looking for quality and reliable performance.,3699.42,5,81,3.6
+P113,Kingston RAM Module 3,Computers,Kingston,Kingston RAM Module designed for everyday use. Suitable for customers looking for quality and reliable performance.,3906.58,5,35,3.9
+P114,Lenovo RAM Module 4,Computers,Lenovo,Lenovo RAM Module designed for everyday use. Suitable for customers looking for quality and reliable performance.,2405.96,10,40,4.8
+P115,Dell RAM Module 5,Computers,Dell,Dell RAM Module designed for everyday use. Suitable for customers looking for quality and reliable performance.,1829.24,5,49,4.4
+P116,HP USB Hub 1,Computers,HP,HP USB Hub designed for everyday use. Suitable for customers looking for quality and reliable performance.,501.77,15,42,4.1
+P117,Crucial USB Hub 2,Computers,Crucial,Crucial USB Hub designed for everyday use. Suitable for customers looking for quality and reliable performance.,498.63,15,49,4.8
+P118,Kingston USB Hub 3,Computers,Kingston,Kingston USB Hub designed for everyday use. Suitable for customers looking for quality and reliable performance.,1912.7,0,97,4.2
+P119,Crucial USB Hub 4,Computers,Crucial,Crucial USB Hub designed for everyday use. Suitable for customers looking for quality and reliable performance.,408.43,10,38,4.5
+P120,Crucial USB Hub 5,Computers,Crucial,Crucial USB Hub designed for everyday use. Suitable for customers looking for quality and reliable performance.,1260.15,25,69,4.6
+P121,HyperX Gaming Controller 1,Gaming,HyperX,HyperX Gaming Controller designed for everyday use. Suitable for customers looking for quality and reliable performance.,3207.8,10,55,4.0
+P122,Logitech Gaming Controller 2,Gaming,Logitech,Logitech Gaming Controller designed for everyday use. Suitable for customers looking for quality and reliable performance.,2675.45,25,51,4.4
+P123,Logitech Gaming Controller 3,Gaming,Logitech,Logitech Gaming Controller designed for everyday use. Suitable for customers looking for quality and reliable performance.,4717.4,20,68,3.1
+P124,Logitech Gaming Controller 4,Gaming,Logitech,Logitech Gaming Controller designed for everyday use. Suitable for customers looking for quality and reliable performance.,3570.62,25,3,3.2
+P125,Logitech Gaming Controller 5,Gaming,Logitech,Logitech Gaming Controller designed for everyday use. Suitable for customers looking for quality and reliable performance.,1973.95,15,23,3.1
+P126,Logitech Gaming Headset 1,Gaming,Logitech,Logitech Gaming Headset designed for everyday use. Suitable for customers looking for quality and reliable performance.,2837.56,15,41,3.7
+P127,Logitech Gaming Headset 2,Gaming,Logitech,Logitech Gaming Headset designed for everyday use. Suitable for customers looking for quality and reliable performance.,2606.81,15,32,4.7
+P128,Logitech Gaming Headset 3,Gaming,Logitech,Logitech Gaming Headset designed for everyday use. Suitable for customers looking for quality and reliable performance.,1390.1,20,6,5.0
+P129,Redgear Gaming Headset 4,Gaming,Redgear,Redgear Gaming Headset designed for everyday use. Suitable for customers looking for quality and reliable performance.,2352.84,0,99,4.9
+P130,Razer Gaming Headset 5,Gaming,Razer,Razer Gaming Headset designed for everyday use. Suitable for customers looking for quality and reliable performance.,4843.9,5,25,4.7
+P131,Cosmic Byte Gaming Mousepad 1,Gaming,Cosmic Byte,Cosmic Byte Gaming Mousepad designed for everyday use. Suitable for customers looking for quality and reliable performance.,481.86,5,60,4.3
+P132,Cosmic Byte Gaming Mousepad 2,Gaming,Cosmic Byte,Cosmic Byte Gaming Mousepad designed for everyday use. Suitable for customers looking for quality and reliable performance.,1436.31,15,89,3.5
+P133,Redgear Gaming Mousepad 3,Gaming,Redgear,Redgear Gaming Mousepad designed for everyday use. Suitable for customers looking for quality and reliable performance.,500.35,20,95,4.4
+P134,HyperX Gaming Mousepad 4,Gaming,HyperX,HyperX Gaming Mousepad designed for everyday use. Suitable for customers looking for quality and reliable performance.,1456.66,0,74,3.1
+P135,Redgear Gaming Mousepad 5,Gaming,Redgear,Redgear Gaming Mousepad designed for everyday use. Suitable for customers looking for quality and reliable performance.,989.96,15,50,4.9
+P136,HyperX Gaming Keyboard 1,Gaming,HyperX,HyperX Gaming Keyboard designed for everyday use. Suitable for customers looking for quality and reliable performance.,2454.98,25,80,3.5
+P137,Redgear Gaming Keyboard 2,Gaming,Redgear,Redgear Gaming Keyboard designed for everyday use. Suitable for customers looking for quality and reliable performance.,7100.76,20,15,4.6
+P138,Cosmic Byte Gaming Keyboard 3,Gaming,Cosmic Byte,Cosmic Byte Gaming Keyboard designed for everyday use. Suitable for customers looking for quality and reliable performance.,6694.81,10,68,3.9
+P139,Redgear Gaming Keyboard 4,Gaming,Redgear,Redgear Gaming Keyboard designed for everyday use. Suitable for customers looking for quality and reliable performance.,2412.74,25,43,3.0
+P140,Logitech Gaming Keyboard 5,Gaming,Logitech,Logitech Gaming Keyboard designed for everyday use. Suitable for customers looking for quality and reliable performance.,6932.99,0,55,4.9
+P141,Mamaearth Face Moisturizer 1,Beauty,Mamaearth,Mamaearth Face Moisturizer designed for everyday use. Suitable for customers looking for quality and reliable performance.,779.48,15,22,4.5
+P142,Philips Face Moisturizer 2,Beauty,Philips,Philips Face Moisturizer designed for everyday use. Suitable for customers looking for quality and reliable performance.,710.93,20,99,4.0
+P143,Mamaearth Face Moisturizer 3,Beauty,Mamaearth,Mamaearth Face Moisturizer designed for everyday use. Suitable for customers looking for quality and reliable performance.,868.3,20,34,3.6
+P144,Lakme Face Moisturizer 4,Beauty,Lakme,Lakme Face Moisturizer designed for everyday use. Suitable for customers looking for quality and reliable performance.,872.05,0,35,4.8
+P145,Lakme Face Moisturizer 5,Beauty,Lakme,Lakme Face Moisturizer designed for everyday use. Suitable for customers looking for quality and reliable performance.,811.86,20,78,4.3
+P146,Philips Sunscreen 1,Beauty,Philips,Philips Sunscreen designed for everyday use. Suitable for customers looking for quality and reliable performance.,316.22,10,23,4.0
+P147,Philips Sunscreen 2,Beauty,Philips,Philips Sunscreen designed for everyday use. Suitable for customers looking for quality and reliable performance.,777.7,10,35,4.8
+P148,Philips Sunscreen 3,Beauty,Philips,Philips Sunscreen designed for everyday use. Suitable for customers looking for quality and reliable performance.,632.47,20,24,3.2
+P149,Mamaearth Sunscreen 4,Beauty,Mamaearth,Mamaearth Sunscreen designed for everyday use. Suitable for customers looking for quality and reliable performance.,592.15,5,88,4.0
+P150,Mamaearth Sunscreen 5,Beauty,Mamaearth,Mamaearth Sunscreen designed for everyday use. Suitable for customers looking for quality and reliable performance.,567.9,0,11,3.6
+P151,Mamaearth Hair Dryer 1,Beauty,Mamaearth,Mamaearth Hair Dryer designed for everyday use. Suitable for customers looking for quality and reliable performance.,2351.75,10,84,4.2
+P152,Mamaearth Hair Dryer 2,Beauty,Mamaearth,Mamaearth Hair Dryer designed for everyday use. Suitable for customers looking for quality and reliable performance.,2061.29,10,54,5.0
+P153,Minimalist Hair Dryer 3,Beauty,Minimalist,Minimalist Hair Dryer designed for everyday use. Suitable for customers looking for quality and reliable performance.,1593.66,25,58,3.5
+P154,Philips Hair Dryer 4,Beauty,Philips,Philips Hair Dryer designed for everyday use. Suitable for customers looking for quality and reliable performance.,1383.13,25,24,3.6
+P155,Minimalist Hair Dryer 5,Beauty,Minimalist,Minimalist Hair Dryer designed for everyday use. Suitable for customers looking for quality and reliable performance.,2895.84,25,23,3.4
+P156,Mamaearth Electric Trimmer 1,Beauty,Mamaearth,Mamaearth Electric Trimmer designed for everyday use. Suitable for customers looking for quality and reliable performance.,1196.7,20,97,4.0
+P157,Philips Electric Trimmer 2,Beauty,Philips,Philips Electric Trimmer designed for everyday use. Suitable for customers looking for quality and reliable performance.,2463.92,5,37,3.5
+P158,Lakme Electric Trimmer 3,Beauty,Lakme,Lakme Electric Trimmer designed for everyday use. Suitable for customers looking for quality and reliable performance.,1243.08,25,68,3.3
+P159,Nivea Electric Trimmer 4,Beauty,Nivea,Nivea Electric Trimmer designed for everyday use. Suitable for customers looking for quality and reliable performance.,2452.73,20,37,4.4
+P160,Lakme Electric Trimmer 5,Beauty,Lakme,Lakme Electric Trimmer designed for everyday use. Suitable for customers looking for quality and reliable performance.,1847.17,15,13,4.7
+P161,Fitkit Yoga Mat 1,Sports & Fitness,Fitkit,Fitkit Yoga Mat designed for everyday use. Suitable for customers looking for quality and reliable performance.,711.77,15,56,3.7
+P162,Boldfit Yoga Mat 2,Sports & Fitness,Boldfit,Boldfit Yoga Mat designed for everyday use. Suitable for customers looking for quality and reliable performance.,676.73,15,14,4.6
+P163,Cosco Yoga Mat 3,Sports & Fitness,Cosco,Cosco Yoga Mat designed for everyday use. Suitable for customers looking for quality and reliable performance.,939.92,20,80,4.4
+P164,Decathlon Yoga Mat 4,Sports & Fitness,Decathlon,Decathlon Yoga Mat designed for everyday use. Suitable for customers looking for quality and reliable performance.,563.12,20,38,3.2
+P165,Decathlon Yoga Mat 5,Sports & Fitness,Decathlon,Decathlon Yoga Mat designed for everyday use. Suitable for customers looking for quality and reliable performance.,529.3,15,77,4.2
+P166,Fitkit Dumbbell Set 1,Sports & Fitness,Fitkit,Fitkit Dumbbell Set designed for everyday use. Suitable for customers looking for quality and reliable performance.,1676.06,20,48,3.9
+P167,Cosco Dumbbell Set 2,Sports & Fitness,Cosco,Cosco Dumbbell Set designed for everyday use. Suitable for customers looking for quality and reliable performance.,1891.06,20,54,3.6
+P168,Fitkit Dumbbell Set 3,Sports & Fitness,Fitkit,Fitkit Dumbbell Set designed for everyday use. Suitable for customers looking for quality and reliable performance.,1179.69,25,12,4.9
+P169,Decathlon Dumbbell Set 4,Sports & Fitness,Decathlon,Decathlon Dumbbell Set designed for everyday use. Suitable for customers looking for quality and reliable performance.,2875.55,10,84,3.2
+P170,Decathlon Dumbbell Set 5,Sports & Fitness,Decathlon,Decathlon Dumbbell Set designed for everyday use. Suitable for customers looking for quality and reliable performance.,1520.44,0,20,3.0
+P171,Cosco Resistance Bands 1,Sports & Fitness,Cosco,Cosco Resistance Bands designed for everyday use. Suitable for customers looking for quality and reliable performance.,750.5,15,37,3.1
+P172,Strauss Resistance Bands 2,Sports & Fitness,Strauss,Strauss Resistance Bands designed for everyday use. Suitable for customers looking for quality and reliable performance.,764.56,25,58,3.1
+P173,Decathlon Resistance Bands 3,Sports & Fitness,Decathlon,Decathlon Resistance Bands designed for everyday use. Suitable for customers looking for quality and reliable performance.,938.13,25,75,4.3
+P174,Decathlon Resistance Bands 4,Sports & Fitness,Decathlon,Decathlon Resistance Bands designed for everyday use. Suitable for customers looking for quality and reliable performance.,539.11,20,28,4.3
+P175,Strauss Resistance Bands 5,Sports & Fitness,Strauss,Strauss Resistance Bands designed for everyday use. Suitable for customers looking for quality and reliable performance.,860.3,0,7,3.3
+P176,Strauss Fitness Bottle 1,Sports & Fitness,Strauss,Strauss Fitness Bottle designed for everyday use. Suitable for customers looking for quality and reliable performance.,556.03,20,36,3.9
+P177,Cosco Fitness Bottle 2,Sports & Fitness,Cosco,Cosco Fitness Bottle designed for everyday use. Suitable for customers looking for quality and reliable performance.,612.21,25,51,4.9
+P178,Fitkit Fitness Bottle 3,Sports & Fitness,Fitkit,Fitkit Fitness Bottle designed for everyday use. Suitable for customers looking for quality and reliable performance.,522.99,15,10,4.2
+P179,Cosco Fitness Bottle 4,Sports & Fitness,Cosco,Cosco Fitness Bottle designed for everyday use. Suitable for customers looking for quality and reliable performance.,639.72,20,32,3.1
+P180,Decathlon Fitness Bottle 5,Sports & Fitness,Decathlon,Decathlon Fitness Bottle designed for everyday use. Suitable for customers looking for quality and reliable performance.,776.15,20,75,4.9
+P181,Camlin Notebook Set 1,Books & Stationery,Camlin,Camlin Notebook Set designed for everyday use. Suitable for customers looking for quality and reliable performance.,408.31,5,60,4.0
+P182,Parker Notebook Set 2,Books & Stationery,Parker,Parker Notebook Set designed for everyday use. Suitable for customers looking for quality and reliable performance.,561.23,5,74,3.9
+P183,Parker Notebook Set 3,Books & Stationery,Parker,Parker Notebook Set designed for everyday use. Suitable for customers looking for quality and reliable performance.,585.07,15,44,3.8
+P184,Camlin Notebook Set 4,Books & Stationery,Camlin,Camlin Notebook Set designed for everyday use. Suitable for customers looking for quality and reliable performance.,450.56,5,42,3.8
+P185,Parker Notebook Set 5,Books & Stationery,Parker,Parker Notebook Set designed for everyday use. Suitable for customers looking for quality and reliable performance.,278.7,15,97,4.1
+P186,Parker Study Lamp 1,Books & Stationery,Parker,Parker Study Lamp designed for everyday use. Suitable for customers looking for quality and reliable performance.,495.87,10,41,3.2
+P187,Parker Study Lamp 2,Books & Stationery,Parker,Parker Study Lamp designed for everyday use. Suitable for customers looking for quality and reliable performance.,1350.4,0,84,4.7
+P188,Parker Study Lamp 3,Books & Stationery,Parker,Parker Study Lamp designed for everyday use. Suitable for customers looking for quality and reliable performance.,853.57,5,66,3.7
+P189,Parker Study Lamp 4,Books & Stationery,Parker,Parker Study Lamp designed for everyday use. Suitable for customers looking for quality and reliable performance.,1086.95,0,26,3.5
+P190,Cello Study Lamp 5,Books & Stationery,Cello,Cello Study Lamp designed for everyday use. Suitable for customers looking for quality and reliable performance.,1419.44,15,89,4.0
+P191,Classmate Pen Set 1,Books & Stationery,Classmate,Classmate Pen Set designed for everyday use. Suitable for customers looking for quality and reliable performance.,488.26,20,30,4.4
+P192,Camlin Pen Set 2,Books & Stationery,Camlin,Camlin Pen Set designed for everyday use. Suitable for customers looking for quality and reliable performance.,319.34,20,52,3.2
+P193,Classmate Pen Set 3,Books & Stationery,Classmate,Classmate Pen Set designed for everyday use. Suitable for customers looking for quality and reliable performance.,283.58,0,82,4.7
+P194,Parker Pen Set 4,Books & Stationery,Parker,Parker Pen Set designed for everyday use. Suitable for customers looking for quality and reliable performance.,472.06,10,65,4.4
+P195,Parker Pen Set 5,Books & Stationery,Parker,Parker Pen Set designed for everyday use. Suitable for customers looking for quality and reliable performance.,432.89,15,31,3.9
+P196,Cello Planner 1,Books & Stationery,Cello,Cello Planner designed for everyday use. Suitable for customers looking for quality and reliable performance.,429.15,20,65,4.5
+P197,Cello Planner 2,Books & Stationery,Cello,Cello Planner designed for everyday use. Suitable for customers looking for quality and reliable performance.,717.42,10,98,4.6
+P198,Parker Planner 3,Books & Stationery,Parker,Parker Planner designed for everyday use. Suitable for customers looking for quality and reliable performance.,402.93,20,34,4.6
+P199,Camlin Planner 4,Books & Stationery,Camlin,Camlin Planner designed for everyday use. Suitable for customers looking for quality and reliable performance.,634.63,20,74,5.0
+P200,Parker Planner 5,Books & Stationery,Parker,Parker Planner designed for everyday use. Suitable for customers looking for quality and reliable performance.,718.16,15,68,4.0
