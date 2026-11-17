@@ -10,7 +10,7 @@ st.set_page_config(
 )
 
 # API address
-API_URL = "http://127.0.0.1:8000/chat"
+API_URL = "https://commercecopilot-ra0g.onrender.com/chat"
 
 # Page title
 st.title("🛍️ CommerceCopilot")
