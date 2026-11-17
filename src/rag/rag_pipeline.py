@@ -9,13 +9,15 @@ import chromadb
 from src.embedding_model import embedding_model
 
 
-# Project paths
+# 1. Project paths
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
+KNOWLEDGE_DIR = BASE_DIR / "data" / "knowledge_base"
+DB_DIR = BASE_DIR / "chroma_db"
 
-# Load local .env file
+
+# 2. Load Groq API key
 load_dotenv(BASE_DIR / ".env")
 
-# Get API key from environment first, then Streamlit secrets
 api_key = os.getenv("GROQ_API_KEY")
 
 if not api_key:
@@ -26,38 +28,123 @@ if not api_key:
 
 if not api_key:
     raise ValueError(
-        "GROQ_API_KEY not found. Configure it in your .env "
-        "file locally or in Streamlit Cloud Secrets."
+        "GROQ_API_KEY not found. Configure it in .env "
+        "or Streamlit Cloud Secrets."
     )
 
 groq_client = Groq(api_key=api_key)
 
-DB_DIR = BASE_DIR / "chroma_db"
 
-# Connect to existing ChromaDB
+# 3. Split documents into chunks
+def split_into_chunks(text, chunk_size=100, overlap=20):
+
+    words = text.split()
+    chunks = []
+
+    for start in range(0, len(words), chunk_size - overlap):
+
+        chunk_words = words[start:start + chunk_size]
+
+        if not chunk_words:
+            break
+
+        chunks.append(" ".join(chunk_words))
+
+        if start + chunk_size >= len(words):
+            break
+
+    return chunks
+
+
+# 4. Initialize ChromaDB
 client = chromadb.PersistentClient(path=str(DB_DIR))
 
-collections = client.list_collections()
-
-if not collections:
-    raise ValueError("No ChromaDB collections found. Run Day 3 first.")
-
-# Reuse the existing collection
-collection_name = (
-    collections[0].name
-    if hasattr(collections[0], "name")
-    else collections[0]
+collection = client.get_or_create_collection(
+    name="commerce_knowledge",
+    metadata={"hnsw:space": "cosine"}
 )
 
-collection = client.get_collection(name=collection_name)
 
-print("Connected to knowledge base:", collection_name)
+# 5. Build knowledge base if empty
+def initialize_knowledge_base():
+
+    if collection.count() > 0:
+        print(
+            "Existing knowledge base loaded:",
+            collection.count(),
+            "chunks"
+        )
+        return
+
+    print("Building knowledge base...")
+
+    documents = []
+    metadatas = []
+    ids = []
+
+    for file_path in KNOWLEDGE_DIR.glob("*.md"):
+
+        text = file_path.read_text(encoding="utf-8")
+        chunks = split_into_chunks(text)
+
+        for index, chunk in enumerate(chunks):
+
+            documents.append(chunk)
+
+            metadatas.append({
+                "source": file_path.name,
+                "chunk": index
+            })
+
+            ids.append(f"{file_path.stem}_{index}")
+
+    if not documents:
+        raise ValueError(
+            "No Markdown documents found in data/knowledge_base/. "
+            "Make sure these files are committed to GitHub."
+        )
+
+    print("Total chunks created:", len(documents))
+
+    # Generate embeddings using the shared model
+    embeddings = embedding_model.encode(
+        documents,
+        normalize_embeddings=True
+    ).tolist()
+
+    # Store in batches
+    batch_size = 100
+
+    for start in range(0, len(documents), batch_size):
+
+        end = start + batch_size
+
+        collection.upsert(
+            ids=ids[start:end],
+            documents=documents[start:end],
+            embeddings=embeddings[start:end],
+            metadatas=metadatas[start:end]
+        )
+
+    print(
+        "Knowledge base initialized successfully:",
+        collection.count(),
+        "chunks"
+    )
 
 
+initialize_knowledge_base()
+
+
+# 6. Retrieve relevant context
 def retrieve_context(question, top_k=3):
 
+    if collection.count() == 0:
+        return ""
+
     question_embedding = embedding_model.encode(
-        question
+        question,
+        normalize_embeddings=True
     ).tolist()
 
     results = collection.query(
@@ -66,11 +153,13 @@ def retrieve_context(question, top_k=3):
     )
 
     documents = results["documents"][0]
+
     context = "\n\n".join(documents)
 
     return context
 
 
+# 7. Build prompt
 def build_prompt(question, context):
 
     prompt = f"""
@@ -100,6 +189,7 @@ ANSWER:
     return prompt
 
 
+# 8. Generate answer
 def generate_answer(prompt):
 
     response = groq_client.chat.completions.create(
@@ -130,7 +220,7 @@ if __name__ == "__main__":
     answer = generate_answer(prompt)
 
     print("=" * 60)
-    print("             COMMERCEC O PILOT")
+    print("             COMMERCE COPILOT")
     print("=" * 60)
     print("\n" + answer + "\n")
     print("=" * 60)
