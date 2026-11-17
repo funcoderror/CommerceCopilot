@@ -3,7 +3,7 @@
 
 CommerceCopilot is an AI-powered conversational shopping and customer-support assistant that combines **Retrieval-Augmented Generation (RAG), semantic search, LLM-based tool calling, and conversational memory** to handle e-commerce queries intelligently.
 
-Built using Python, FastAPI, Streamlit, and Groq, the application enables customers to discover products, retrieve company policy information, check order details, and interact with an AI assistant through a conversational interface.
+Built using Python, Streamlit, and Groq, the application enables customers to discover products, retrieve company policy information, check order details, and interact with an AI assistant through a conversational interface.
 
 Instead of relying entirely on an LLM's pretrained knowledge, CommerceCopilot integrates a custom knowledge base and structured business data to generate context-aware responses.
 
@@ -17,17 +17,16 @@ Instead of relying entirely on an LLM's pretrained knowledge, CommerceCopilot in
 - **Product Discovery:** Searches and filters a structured product catalog.
 - **Order Information:** Retrieves order-related information from structured datasets.
 - **Catalog Insights:** Handles queries involving product availability and catalog information.
-- **Conversational Memory:** Maintains context across multiple messages.
-- **Persistent Chat History:** Uses SQLite to store conversations across application restarts.
+- **Conversational Memory:** Maintains context across multiple messages within a conversation.
+- **Chat History:** Uses SQLite to store conversation messages locally.
 - **Domain Restriction:** Handles shopping and customer-support-related queries while restricting unrelated requests.
 - **Interactive Chat Interface:** Provides a conversational frontend using Streamlit.
-- **REST API:** Connects the frontend and AI assistant through FastAPI.
 
 ---
 
 ## 🏗️ System Architecture
 
-CommerceCopilot follows a modular architecture that separates user interaction, backend processing, knowledge retrieval, structured tool execution, and conversation persistence.
+CommerceCopilot follows a modular architecture that separates user interaction, AI processing, knowledge retrieval, structured tool execution, and conversation storage.
 
 ### 1. Application Flowchart
 
@@ -36,51 +35,34 @@ The following flowchart illustrates the complete query-processing workflow, from
 ```mermaid
 flowchart TD
     A(["User submits a query"]) --> B["Streamlit Frontend"]
-    B --> C["FastAPI Backend"]
+    B --> C["AI Assistant"]
     C --> D[("SQLite Conversation Memory")]
-    D --> E["AI Assistant"]
-    
-    E --> F{"Determine Query Type"}
+    D --> E{"Determine Query Type"}
 
-    F -->|"Knowledge Question"| G["RAG Pipeline"]
-    F -->|"Structured Query"| H["Tool Calling"]
-    F -->|"General Conversation"| I["LLM Response"]
+    E -->|"Knowledge Question"| F["RAG Pipeline"]
+    E -->|"Structured Query"| G["Tool Calling"]
+    E -->|"General Conversation"| H["LLM Response"]
 
-    G --> J["Semantic Search"]
-    J --> K[("Knowledge Base")]
-    K --> L["Retrieve Relevant Context"]
+    F --> I["Semantic Search"]
+    I --> J[("Knowledge Base")]
+    J --> K["Retrieve Relevant Context"]
 
-    H --> M{"Select Appropriate Tool"}
-    M -->|"Product Query"| N["Product Catalog"]
-    M -->|"Order Query"| O["Order Dataset"]
-    M -->|"Catalog Query"| P["Catalog Functions"]
+    G --> L{"Select Appropriate Tool"}
+    L -->|"Product Query"| M["Product Catalog"]
+    L -->|"Order Query"| N["Order Dataset"]
+    L -->|"Catalog Query"| O["Catalog Functions"]
 
-    N --> Q["Tool Execution Result"]
-    O --> Q
+    M --> P["Tool Execution Result"]
+    N --> P
+    O --> P
+
+    K --> Q["Context-Aware Response Generation"]
     P --> Q
+    H --> Q
 
-    L --> R["Context-Aware Response Generation"]
-    Q --> R
-    I --> R
-
-    R --> S["Save Conversation History"]
-    S --> T["FastAPI Returns Response"]
-    T --> U["Streamlit Displays Response"]
-    U --> V(["User receives answer"])
-
-    classDef user fill:#dbeafe,stroke:#2563eb,color:#1e3a8a
-    classDef process fill:#ede9fe,stroke:#7c3aed,color:#4c1d95
-    classDef decision fill:#fef3c7,stroke:#d97706,color:#78350f
-    classDef rag fill:#dcfce7,stroke:#16a34a,color:#14532d
-    classDef tools fill:#ffedd5,stroke:#ea580c,color:#7c2d12
-    classDef storage fill:#e5e7eb,stroke:#6b7280,color:#1f2937
-
-    class A,V user
-    class B,C,E,R,T,U process
-    class F,M decision
-    class G,J,L rag
-    class H,N,O,P,Q tools
-    class D,K,S storage
+    Q --> R["Save Conversation History"]
+    R --> S["Streamlit Displays Response"]
+    S --> T(["User receives answer"])
 ```
 
 ### 2. RAG Pipeline
@@ -109,18 +91,6 @@ flowchart TD
     I --> J["Construct Context"]
     J --> K["Groq LLM"]
     K --> L(["Context-Grounded Response"])
-
-    classDef input fill:#dbeafe,stroke:#2563eb,color:#1e3a8a
-    classDef processing fill:#ede9fe,stroke:#7c3aed,color:#4c1d95
-    classDef embedding fill:#dcfce7,stroke:#16a34a,color:#14532d
-    classDef storage fill:#e5e7eb,stroke:#6b7280,color:#1f2937
-    classDef output fill:#ffedd5,stroke:#ea580c,color:#7c2d12
-
-    class A,F input
-    class B,G,H,I,J processing
-    class C,D embedding
-    class E storage
-    class K,L output
 ```
 
 ### 3. Tool Calling Workflow
@@ -146,18 +116,6 @@ flowchart TD
 
     J --> K["Groq LLM Processes Result"]
     K --> L(["Natural Language Response"])
-
-    classDef input fill:#dbeafe,stroke:#2563eb,color:#1e3a8a
-    classDef process fill:#ede9fe,stroke:#7c3aed,color:#4c1d95
-    classDef decision fill:#fef3c7,stroke:#d97706,color:#78350f
-    classDef storage fill:#e5e7eb,stroke:#6b7280,color:#1f2937
-    classDef output fill:#dcfce7,stroke:#16a34a,color:#14532d
-
-    class A,L input
-    class B,D,E,F,J,K process
-    class C decision
-    class G,H storage
-    class I output
 ```
 
 ---
@@ -169,6 +127,7 @@ flowchart TD
 | LLM Provider | Groq | Natural-language understanding and response generation |
 | Embedding Model | `all-MiniLM-L6-v2` | Semantic text embeddings |
 | Embedding Framework | Sentence Transformers | Embedding generation |
+| Vector Database | ChromaDB | Storing and retrieving document embeddings |
 | Retrieval Approach | RAG | Knowledge-grounded question answering |
 
 ### Application Tech Stack
@@ -176,9 +135,8 @@ flowchart TD
 | Technology | Purpose |
 |---|---|
 | Python | Core application development |
-| FastAPI | Backend REST API |
-| Streamlit | Interactive frontend |
-| SQLite | Persistent conversation storage |
+| Streamlit | Interactive frontend and application runtime |
+| SQLite | Local conversation storage |
 | Pandas | Structured data processing |
 | Mermaid | Architecture and workflow diagrams |
 
@@ -198,7 +156,7 @@ CommerceCopilot supports multi-turn conversations by maintaining contextual info
 
 **Assistant:** Uses the previous conversational context to identify the cheapest option.
 
-Conversation history is persisted using SQLite, allowing conversations to remain available across application restarts.
+Conversation messages are stored using SQLite. Local conversation history can persist across application restarts, while cloud-hosted storage may reset depending on the hosting environment.
 
 ---
 
@@ -211,9 +169,6 @@ CommerceCopilot/
 │   └── app.py
 │
 ├── src/
-│   ├── api/
-│   │   └── main.py
-│   │
 │   ├── memory/
 │   │   └── chat_memory.py
 │   │
@@ -291,7 +246,7 @@ pip install -r requirements.txt
 
 Obtain an API key from [Groq Console](https://console.groq.com/).
 
-Configure the API key using the environment variable or configuration mechanism expected by the application.
+Set the `GROQ_API_KEY` environment variable or configure it through the application's secrets mechanism.
 
 Keep API credentials private. Never commit API keys to GitHub.
 
@@ -299,27 +254,9 @@ Keep API credentials private. Never commit API keys to GitHub.
 
 Ensure that the product catalog, order dataset, and knowledge-base documents are available in the `data/` directory.
 
-Run the data preparation step if required by the application:
+The RAG pipeline automatically initializes the ChromaDB knowledge base from the Markdown documents when required.
 
-```bash
-python -m src.prepare_data
-```
-
-### 6. Start the FastAPI Backend
-
-```bash
-uvicorn src.api.main:app --reload
-```
-
-The backend will be available at:
-
-```text
-http://127.0.0.1:8000
-```
-
-### 7. Start the Streamlit Frontend
-
-Open another terminal, activate the virtual environment, and run:
+### 6. Run the Application
 
 ```bash
 streamlit run frontend/app.py
@@ -351,10 +288,8 @@ python -m pytest test_tools.py test_tool_calling.py
 - Handling of unrelated queries.
 - Tool selection based on user intent.
 - Multi-turn conversational context.
-- Persistent conversation history.
-- Frontend-to-backend communication.
-
-The application was tested through its major shopping and customer-support workflows, including verification of conversation persistence across application restarts.
+- Conversation history management.
+- Streamlit chat interface.
 
 ---
 
@@ -378,6 +313,7 @@ Suggested screenshots:
 - The knowledge base contains a limited collection of sample company documents.
 - Response accuracy depends on the quality of retrieved information and the underlying LLM.
 - The application is a functional prototype and does not implement a complete e-commerce checkout or payment system.
+- Cloud-hosted local storage may not provide permanent persistence across application restarts.
 - External production integrations and live inventory synchronization are not currently included.
 
 ---
@@ -388,7 +324,7 @@ Suggested screenshots:
 - Improved retrieval quality through experimentation with embedding models and retrieval strategies.
 - More advanced product recommendation capabilities.
 - User authentication and individual customer sessions.
-- Cloud deployment and production monitoring.
+- More reliable persistent storage and production monitoring.
 - Expanded evaluation using a larger collection of representative customer queries.
 
 ---
