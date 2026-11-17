@@ -1,26 +1,112 @@
 
 import pandas as pd
+import re
+from sentence_transformers import SentenceTransformer, util
 
 # Load datasets
 products = pd.read_csv("data/products.csv")
 orders = pd.read_csv("data/orders.csv")
 
+# Load embedding model
+embedding_model = SentenceTransformer(
+    "sentence-transformers/all-MiniLM-L6-v2"
+)
+
+
+# Prepare searchable product information
+searchable_columns = [
+    col for col in ["name", "brand", "category", "description"]
+    if col in products.columns
+]
+
+product_texts = (
+    products[searchable_columns]
+    .fillna("")
+    .astype(str)
+    .agg(" ".join, axis=1)
+    .tolist()
+)
+
+# Generate product embeddings once during initialization
+product_embeddings = embedding_model.encode(
+    product_texts,
+    convert_to_tensor=True,
+    normalize_embeddings=True
+)
 
 # 1. Search for a product
 def search_product(query):
 
     query = str(query).strip().lower()
 
-    # Search by product ID or product name
+    if not query:
+        return {"error": "Please provide a product name or query."}
+
+    # STEP 1: Exact product ID matching
     result = products[
-        (products["product_id"].str.lower() == query) |
-        (products["name"].str.lower().str.contains(query, na=False))
+        products["product_id"].astype(str).str.lower() == query
     ]
 
-    if result.empty:
-        return {"error": "No matching product found."}
+    if not result.empty:
+        return result.head(5).to_dict(orient="records")
 
-    return result.head(5).to_dict(orient="records")
+    # STEP 2: Direct product name matching
+    result = products[
+        products["name"].astype(str).str.lower().str.contains(
+            re.escape(query), na=False
+        )
+    ]
+
+    if not result.empty:
+        return result.head(5).to_dict(orient="records")
+
+    # STEP 3: Clean conversational query
+    stopwords = {
+        "what", "is", "the", "of", "for", "me",
+        "show", "find", "get", "much", "cost",
+        "price", "tell", "about", "do", "you",
+        "have", "a", "an", "i", "want", "looking"
+    }
+
+    cleaned_query = " ".join(
+        word for word in re.sub(r"[^a-zA-Z0-9]+", " ", query).split()
+        if word not in stopwords
+    )
+
+    if not cleaned_query:
+        cleaned_query = query
+
+    # STEP 4: Generate query embedding
+    query_embedding = embedding_model.encode(
+        cleaned_query,
+        convert_to_tensor=True,
+        normalize_embeddings=True
+    )
+
+    # STEP 5: Calculate semantic similarity
+    similarities = util.cos_sim(
+        query_embedding,
+        product_embeddings
+    )[0]
+
+    # STEP 6: Retrieve top matching products
+    top_indices = similarities.argsort(
+        descending=True
+    )[:5]
+
+    results = []
+
+    for idx in top_indices:
+        score = similarities[idx].item()
+
+        # Minimum relevance threshold
+        if score >= 0.30:
+            results.append(products.iloc[int(idx)].to_dict())
+
+    if not results:
+        return {"error": "No relevant products found."}
+
+    return results
 
 
 # 2. Check product inventory
