@@ -1,17 +1,12 @@
 
 import pandas as pd
 import re
-from sentence_transformers import SentenceTransformer, util
+from sentence_transformers import util
+from src.embedding_model import embedding_model
 
 # Load datasets
 products = pd.read_csv("data/products.csv")
 orders = pd.read_csv("data/orders.csv")
-
-# Load embedding model
-embedding_model = SentenceTransformer(
-    "sentence-transformers/all-MiniLM-L6-v2"
-)
-
 
 # Prepare searchable product information
 searchable_columns = [

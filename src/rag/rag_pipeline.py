@@ -6,7 +6,7 @@ from groq import Groq
 from pathlib import Path
 
 import chromadb
-from sentence_transformers import SentenceTransformer
+from src.embedding_model import embedding_model
 
 
 # Project paths
@@ -21,12 +21,6 @@ if not api_key:
 groq_client = Groq(api_key=api_key)
 
 DB_DIR = BASE_DIR / "chroma_db"
-
-# Load embedding model
-print("Loading embedding model...")
-embedding_model = SentenceTransformer(
-    "sentence-transformers/all-MiniLM-L6-v2"
-)
 
 # Connect to existing ChromaDB
 client = chromadb.PersistentClient(path=str(DB_DIR))
