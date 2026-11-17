@@ -1,6 +1,15 @@
 
+import sys
+import uuid
+from pathlib import Path
+
 import streamlit as st
-import requests
+
+# Add project root to Python import path
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 # Page configuration
 st.set_page_config(
@@ -9,27 +18,26 @@ st.set_page_config(
     layout="centered"
 )
 
-# API address
-API_URL = "https://commercecopilot-ra0g.onrender.com/chat"
+# Initialize session data
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
+if "session_id" not in st.session_state:
+    st.session_state.session_id = str(uuid.uuid4())
 
 # Page title
 st.title("🛍️ CommerceCopilot")
 st.caption("Your AI shopping and customer support assistant")
 
-# Initialize chat history
-if "messages" not in st.session_state:
-    st.session_state.messages = []
-
 # Display previous messages
 for message in st.session_state.messages:
-
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
 # Chat input
 user_input = st.chat_input("Ask CommerceCopilot...")
 
-# Use an example prompt if a visitor clicked one
+# Handle example prompts
 if st.session_state.get("selected_prompt"):
     user_input = st.session_state.pop("selected_prompt")
 
@@ -44,34 +52,32 @@ if user_input:
     with st.chat_message("user"):
         st.markdown(user_input)
 
-    # Get AI response
+    # Generate assistant response
     with st.chat_message("assistant"):
 
         with st.spinner("CommerceCopilot is thinking..."):
 
             try:
-                response = requests.post(
-                    API_URL,
-                    json={"message": user_input}
+                from src.tools.tool_calling import run_tool_assistant
+
+                answer = run_tool_assistant(
+                    user_input,
+                    session_id=st.session_state.session_id
                 )
 
-                response.raise_for_status()
-
-                answer = response.json()["response"]
-
-            except requests.exceptions.RequestException as e:
-                answer = f"Could not connect to the API: {e}"
+            except Exception as e:
+                answer = f"Something went wrong: {str(e)}"
 
             st.markdown(answer)
 
-    # Save assistant response in session
+    # Save assistant response in Streamlit session
     st.session_state.messages.append({
         "role": "assistant",
         "content": answer
     })
 
 
-# Welcome section for first-time visitors
+# Welcome section
 if not st.session_state.messages:
 
     st.markdown("## Welcome to CommerceCopilot! 👋")
@@ -94,6 +100,10 @@ if not st.session_state.messages:
 
     for i, example in enumerate(examples):
         with cols[i % 2]:
-            if st.button(example, key=f"example_{i}",
-                         use_container_width=True):
+            if st.button(
+                example,
+                key=f"example_{i}",
+                use_container_width=True
+            ):
                 st.session_state.selected_prompt = example
+                st.rerun()

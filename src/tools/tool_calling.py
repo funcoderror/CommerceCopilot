@@ -29,23 +29,23 @@ initialize_database()
 tool_definitions = [
 
     {
-    "type": "function",
-    "function": {
-        "name": "get_catalog_summary",
-        "description": (
-            "Get the complete product catalog summary, "
-            "including total product count, product categories "
-            "and brand counts. Use this whenever the user asks "
-            "about the overall inventory, total products or "
-            "available product categories."
-        ),
-        "parameters": {
-            "type": "object",
-            "properties": {},
-            "required": []
+        "type": "function",
+        "function": {
+            "name": "get_catalog_summary",
+            "description": (
+                "Get the complete product catalog summary, "
+                "including total product count, product categories "
+                "and brand counts. Use this whenever the user asks "
+                "about the overall inventory, total products or "
+                "available product categories."
+            ),
+            "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            }
         }
-    }
-},
+    },
 
     {
         "type": "function",
@@ -152,17 +152,20 @@ available_functions = {
 }
 
 
-# 4. Main tool-calling function with memory
+# 4. Main tool-calling function with session-specific memory
 
-def run_tool_assistant(user_query):
+def run_tool_assistant(user_query, session_id):
 
-    # Load previous conversation before adding the new message
-    history = get_history(limit=10)
+    # Load this visitor's previous conversation
+    history = get_history(session_id=session_id, limit=10)
 
-    # Save the current user message
-    save_message("user", user_query)
+    # Save current user message
+    save_message(
+        "user",
+        user_query,
+        session_id=session_id
+    )
 
-    # System instructions
     system_message = {
         "role": "system",
         "content": """
@@ -207,8 +210,6 @@ def run_tool_assistant(user_query):
             """
     }
 
-
-    # Combine system message, previous history and current query
     messages = [
         system_message
     ] + history + [
@@ -238,8 +239,11 @@ def run_tool_assistant(user_query):
 
             final_answer = response_message.content or ""
 
-            # Save assistant response in memory
-            save_message("assistant", final_answer)
+            save_message(
+                "assistant",
+                final_answer,
+                session_id=session_id
+            )
 
             return final_answer
 
@@ -270,13 +274,11 @@ def run_tool_assistant(user_query):
             else:
 
                 try:
-
                     function_result = function_to_call(
                         **function_args
                     )
 
                 except Exception as e:
-
                     function_result = {
                         "error": str(e)
                     }
@@ -301,7 +303,10 @@ def run_tool_assistant(user_query):
 
     final_answer = final_response.choices[0].message.content or ""
 
-    # Save final assistant response
-    save_message("assistant", final_answer)
+    save_message(
+        "assistant",
+        final_answer,
+        session_id=session_id
+    )
 
     return final_answer

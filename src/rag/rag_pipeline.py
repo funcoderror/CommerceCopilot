@@ -1,8 +1,8 @@
 
 import os
+import streamlit as st
 from dotenv import load_dotenv
 from groq import Groq
-
 from pathlib import Path
 
 import chromadb
@@ -11,12 +11,24 @@ from src.embedding_model import embedding_model
 
 # Project paths
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
+# Load local .env file
 load_dotenv(BASE_DIR / ".env")
 
+# Get API key from environment first, then Streamlit secrets
 api_key = os.getenv("GROQ_API_KEY")
 
 if not api_key:
-    raise ValueError("GROQ_API_KEY not found in .env file")
+    try:
+        api_key = st.secrets["GROQ_API_KEY"]
+    except Exception:
+        api_key = None
+
+if not api_key:
+    raise ValueError(
+        "GROQ_API_KEY not found. Configure it in your .env "
+        "file locally or in Streamlit Cloud Secrets."
+    )
 
 groq_client = Groq(api_key=api_key)
 
@@ -30,7 +42,7 @@ collections = client.list_collections()
 if not collections:
     raise ValueError("No ChromaDB collections found. Run Day 3 first.")
 
-# Reuse the collection created on Day 3
+# Reuse the existing collection
 collection_name = (
     collections[0].name
     if hasattr(collections[0], "name")
@@ -44,20 +56,16 @@ print("Connected to knowledge base:", collection_name)
 
 def retrieve_context(question, top_k=3):
 
-    # Convert question into embedding
     question_embedding = embedding_model.encode(
         question
     ).tolist()
 
-    # Search ChromaDB
     results = collection.query(
         query_embeddings=[question_embedding],
         n_results=min(top_k, collection.count())
     )
 
     documents = results["documents"][0]
-
-    # Combine retrieved chunks
     context = "\n\n".join(documents)
 
     return context
@@ -95,23 +103,17 @@ ANSWER:
 def generate_answer(prompt):
 
     response = groq_client.chat.completions.create(
-
         model="openai/gpt-oss-20b",
-
         messages=[
             {
                 "role": "user",
                 "content": prompt
             }
         ],
-
         max_completion_tokens=500
     )
 
-    answer = response.choices[0].message.content
-
-    return answer
-
+    return response.choices[0].message.content
 
 
 if __name__ == "__main__":
@@ -120,22 +122,15 @@ if __name__ == "__main__":
 
     print("\nSearching company knowledge base...")
 
-    # Step 1: Retrieve relevant information
     context = retrieve_context(question)
-
-    # Step 2: Construct the prompt
     prompt = build_prompt(question, context)
 
-    # Step 3: Generate answer using Groq
     print("\nCommerceCopilot is thinking...\n")
 
     answer = generate_answer(prompt)
 
-    # Step 4: Display final response
     print("=" * 60)
-    print("             COMMERCECOPILOT")
+    print("             COMMERCEC O PILOT")
     print("=" * 60)
-
     print("\n" + answer + "\n")
-
     print("=" * 60)
