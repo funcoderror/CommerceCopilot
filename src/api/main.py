@@ -24,7 +24,14 @@ def chat(request: ChatRequest):
     import json
     print("STEP 3: JSON IMPORTED", flush=True)
 
+    print("STEP 3A: ABOUT TO IMPORT RAG PIPELINE", flush=True)
+
+    from src.embedding_model import embedding_model
+
+    print("STEP 3B: EMBEDDING MODEL IMPORTED", flush=True)
+
     from src.rag import rag_pipeline
+
     print("STEP 4: RAG PIPELINE IMPORTED", flush=True)
 
     from src.tools import tools
