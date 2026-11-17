@@ -2,8 +2,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-from src.tools.tool_calling import run_tool_assistant
-
 app = FastAPI(title="CommerceCopilot API")
 
 
@@ -18,7 +16,8 @@ def home():
 
 @app.post("/chat")
 def chat(request: ChatRequest):
+    # Load the assistant only when a chat request arrives
+    from src.tools.tool_calling import run_tool_assistant
 
     response = run_tool_assistant(request.message)
-
     return {"response": response}
